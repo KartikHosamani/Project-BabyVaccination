@@ -1,0 +1,59 @@
+<div class="header">
+    <div class="background">
+      <div class="headertitle">
+        <h1><u>Baby Vaccination</u></h1>
+        <p>Protecting Little Lives, One Vaccination at a Time</p>
+      </div>
+    </div>
+
+    <div class="navbar">
+      <div class="links">
+        <a routerLink="/home">HOME</a>
+        <a routerLink="/record">RECORDS</a>
+        <a routerLink="/info">VACCINATION</a>
+      </div>
+        <button class="button-4" routerLink="/dataentry">Data Entry</button>
+    </div>
+  </div>
+
+  <div class="records">
+    <div class="chart">
+      <h1><u>Records of Babies</u></h1>
+      <table>
+        <tr>
+          <th>Sl.no</th>
+          <th>Baby Name</th>
+          <th>DOB</th>
+          <th>TOB</th>
+          <th>Gender</th>
+          <th>Father Name</th>
+          <th>Mother Name</th>
+          <th>Address</th>
+          <!-- <th>Vaccine Duration</th>
+          <th>Doses</th>
+          <th>Comments</th> -->
+          <th>Action</th>
+        </tr>
+
+        <tr *ngFor="let info of babyinfo; let i=index">
+          <td>{{i}}</td>
+          <td>{{info.babyname}}</td>
+          <td>{{info.date}}</td>
+          <td>{{info.time}}</td>
+          <td>{{info.gender}}</td>
+          <td>{{info.fathername}}</td>
+          <td>{{info.mothername}}</td>
+          <td>{{info.address}}</td>
+          <td>
+            <button class="button-5" routerLink="/edit/{{info.id}}">Edit</button>
+            <button class="button-5" (click)="onDelete(info.id)">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <h1>Baby Vaccination</h1>
+    <p>&#169; All rights reserved</p>
+  </div>

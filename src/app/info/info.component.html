@@ -1,0 +1,96 @@
+<div class="header">
+    <div class="background">
+      <div class="headertitle">
+        <h1><u>Baby Vaccination</u></h1>
+        <p>Protecting Little Lives, One Vaccination at a Time</p>
+      </div>
+    </div>
+
+    <div class="navbar">
+      <div class="links">
+        <a routerLink="/home">HOME</a>
+        <a routerLink="/record">RECORDS</a>
+        <a routerLink="/info">VACCINATION</a>
+      </div>
+        <button class="button-4" routerLink="/dataentry">Data Entry</button>
+    </div>
+  </div>
+
+  <div class="left-side-content">
+    <h3>Understanding Vaccine Ingredients</h3>
+    <p>Vaccines contain a combination of ingredients that help stimulate the immune system and provide immunity against diseases. Common vaccine ingredients include:</p>
+    <ul>
+      <li>Inactivated or weakened viruses or bacteria</li>
+      <li>Adjuvants to enhance the immune response</li>
+      <li>Preservatives to prevent contamination</li>
+      <li>Stabilizers to maintain vaccine potency</li>
+      <li>Other substances for vaccine production and administration</li>
+    </ul>
+
+    <h3>Additional Resources</h3>
+    <p>For more reliable and up-to-date information about vaccines, please visit the following resources:</p>
+    <ul>
+      <li><a href="https://www.vaccines.gov/" target="_blank">Vaccines.gov</a></li>
+      <li><a href="https://www.immunize.org/" target="_blank">Immunization Action Coalition (IAC)</a></li>
+      <li><a href="https://www.nfid.org/" target="_blank">National Foundation for Infectious Diseases (NFID)</a></li>
+    </ul>
+  
+   
+  </div>
+ 
+
+  <!-- <div class="search">
+    <h1><u>Search Baby</u></h1>
+    <select [(ngModel)]="searchTerm">
+      <option value="">Select a baby name</option>
+      <option *ngFor="let baby of babyNames" [value]="baby">{{ baby }}</option>
+    </select>
+    <button (click)="searchBaby()">Search</button>
+  </div> -->
+
+  
+  <!-- search.component.html -->
+  <div class="search">
+    <h1><u>Search Baby Name</u></h1>
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Baby Name">
+    <button (click)="searchBabyDetails()" class="button-5">Search</button>
+  </div>
+
+  <div class="records">
+    <div class="chart">
+      <h1><u>Records of Babies</u></h1>
+      <table>
+        <tr>
+          <th>Sl.no</th>
+          <th>Baby Name</th>
+          <th>Vaccine Duration</th>
+          <th>Doses</th>
+          <th>Comments</th>
+          <th>Action</th>
+        </tr>
+
+        <tr *ngFor="let info of vaccinedata; let i=index">
+          <td>{{i}}</td>
+          <td>{{info.babyname}}</td>
+          <td>{{info.duration}}</td>
+          <td>{{info.dose}}</td>
+          <td>{{info.comment}}</td>
+          <td>
+            <button class="button-5" routerLink="/editvaccinedata/{{info.id}}">Edit</button>
+            <button class="button-5" (click)="onDelete(info.id)">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
+  
+<div class="footer">
+  <h1>Baby Vaccination</h1>
+  <p>&#169; All rights reserved</p>
+</div>
+
+  
+
+
